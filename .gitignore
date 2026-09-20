@@ -1,0 +1,5 @@
+/target
+.openmd/
+*.db
+*.db-journal
+.DS_Store

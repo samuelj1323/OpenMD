@@ -1,0 +1,19 @@
+[package]
+name = "openmd-app"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "openMD app shell: CLI today, GPUI native editor UI next"
+
+[[bin]]
+name = "openmd"
+path = "src/main.rs"
+
+[dependencies]
+openmd-core = { path = "../core" }
+openmd-storage = { path = "../storage" }
+
+# GPUI (Zed's GPU-accelerated Rust UI framework) — pinned rev, milestone 4.
+# Pinned 2026-09-20 to zed@main 0eda7703f6c88aa08a25c1d2105ff1ca46f775d4.
+# Uncomment to build the native editor shell:
+# gpui = { git = "https://github.com/zed-industries/zed.git", rev = "0eda7703f6c88aa08a25c1d2105ff1ca46f775d4", package = "gpui" }

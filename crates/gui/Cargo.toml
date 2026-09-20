@@ -1,0 +1,21 @@
+[package]
+name = "openmd-gui"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "openMD native editor UI built on GPUI (Zed's GPU-accelerated framework)"
+
+[[bin]]
+name = "openmd-gui"
+path = "src/main.rs"
+
+[dependencies]
+openmd-core = { path = "../core" }
+openmd-storage = { path = "../storage" }
+gpui = { version = "0.2", features = ["runtime_shaders"] }
+# NOTE: GPUI precompiles Metal shaders at build time via `xcrun metal`,
+# which needs full Xcode with an accepted license. `runtime_shaders`
+# compiles them at app startup instead, so the CLT-only toolchain works.
+# If you accept the Xcode license (`sudo xcodebuild -license accept`),
+# you can drop the feature for slightly faster startup.
+unicode-segmentation = "1"

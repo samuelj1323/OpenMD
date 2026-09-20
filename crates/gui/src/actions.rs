@@ -1,0 +1,30 @@
+use gpui::actions;
+
+actions!(
+    openmd,
+    [
+        Backspace,
+        Delete,
+        Left,
+        Right,
+        SelectLeft,
+        SelectRight,
+        SelectAll,
+        Home,
+        End,
+        Paste,
+        Cut,
+        Copy,
+        SplitBlock,
+        Save,
+        NewPage,
+        Quit,
+        SlashUp,
+        SlashDown,
+        SlashEscape,
+        ToggleSidebar,
+        CopyMarkdown,
+        RevealVault,
+        ExportPage
+    ]
+);
